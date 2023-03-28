@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="sp">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="app.js" type="module"></script>
+    <title>Vue</title>
+</head>
+
+<body>
+    <div id="app">
+        <p>Seleccione una ciudad</p>
+        <select v-model="sel" @click="seleccion">
+            <option value="Bucaramanga" v-for="i in campusG">{{i.campus.sedes.sede1}}</option>
+            <option value="Bogota" v-for="i in campusG">{{i.campus.sedes.sede2}}</option>
+            <option value="Medellin" v-for="i in campusG">{{i.campus.sedes.sede3}}</option>
+            <option value="Mexico" v-for="i in campusG">{{i.campus.sedes.sede4}}</option>
+        </select> <br>
+        <form>
+            <label for="k">Ingrese el Telefono :: </label>
+            <input id="k" type="number" pattern="[0-9]+"> <br>
+            <label for="h">Ingrese la Direccion :: </label>
+            <input id="h" type="text" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
+        </form>
+        <div v-if="activar_form == null">
+            <br><br><br><br><br>
+                <select v-model="a" @click="hola">
+                    <option value="estudiante" v-for="(i, index) in rol">{{i.a1}}</option>
+                    <option value="profesor" v-for="(i, index) in rol">{{i.a2}}</option>
+                </select>
+            </div>
+            <div v-if="activar_form1 == null">
+                hola
+            </div>
+    </div>
+
+
+</body>
+
+</html>
